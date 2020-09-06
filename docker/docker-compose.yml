@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+  mariadb:
+    image: mariadb:latest
+    env_file: ./database.env
+    ports:
+      - 3306:3306
+  app:
+    build:
+      context: ../
+      dockerfile: ./docker/app/Dockerfile
+    volumes:
+      - ../app:/app
+    ports:
+      - 3000:3000
+    command: ruby main.rb
