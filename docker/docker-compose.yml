@@ -17,4 +17,16 @@ services:
       - ../app:/app
     ports:
       - 3000:3000
+    env_file:
+      - ./database.env
     command: ruby main.rb
+    depends_on:
+      - lb
+      - redis
+      - mariadb
+  lb:
+    build:
+      context: ../
+      dockerfile: ./docker/lb/Dockerfile
+    ports:
+      - 80:80
