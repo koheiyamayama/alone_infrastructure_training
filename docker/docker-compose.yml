@@ -18,7 +18,7 @@ services:
     ports:
       - 3000:3000
     env_file:
-      - ./database.env
+      - ./app.env
     command: ruby main.rb
     depends_on:
       - lb
