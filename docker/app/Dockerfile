@@ -1,5 +1,4 @@
-FROM ruby:alpine3.12
-RUN apk update && apk add mysql-client
+FROM ruby:buster
 WORKDIR /app
 COPY ./app/Gemfile /app
 COPY ./app/Gemfile.lock /app
