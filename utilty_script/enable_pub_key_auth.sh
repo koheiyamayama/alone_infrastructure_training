@@ -1,0 +1,7 @@
+#! /bin/bash
+
+mkdir .ssh
+chmod 700 .ssh
+cd .ssh
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsCvDLNEy6BvuoehtttRU5ZNZcwCbFhoz5onpHmVFNoDerruObM0UuNpO/SdSZr2HgUO34oGIYKC7Phaw5yZHRgR1dk++kwu6Twmttkp+nFDAP2TodwSNt7sg/VVxRoZAccgoMVxMWDI/Zze7awSRMpo2ycbrEs5nRnlT1YHXfL65yeMrW06R9D4ILjZDvYHEhs7bOTwSeuVL5vCUxuiRHm8jE4SuVWXU9RK9TRGae+SyslALhtawsWnMnLJe6SIiOvORem7Ej/FrQkFbmPzoI5FLyjX6GS/N5qRKgoUZxMthg1NEKL7seXfw1bZfT/p3LInKO4MxiNo1sUDq0eLGJ koheiyamaguchi@koheinoMacBook-Pro.local" >> authorized_keys
+chmod 600 authorized_keys
