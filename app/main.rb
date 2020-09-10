@@ -29,7 +29,7 @@
 puts 'Hello World!'
 count = 0
 while true
-  File.open('./app/logs.txt', 'a+') do |f|
+  File.open('./logs/logs.txt', 'a+') do |f|
     sleep 1
     count += 1
     f.write(count, "\n")

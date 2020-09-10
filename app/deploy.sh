@@ -6,14 +6,17 @@ scp $PWD/app/* api2:~/app/
 
 
 if [ $? = 0 ]; then
-  printf "\e[32m completing the updating!! \e[m"
+  printf "\e[32mcompleting the updating!! \e[m"
 else
-  printf "\e[31m update failed!! \e[m\n"
+  printf "\e[31mupdate failed!! \e[m\n"
 fi
 echo -e "\n"
 
 echo "restarting application server..."
 ssh api1 "cd ~/app && sudo systemctl restart app_server.service" &&
 ssh api2 "cd ~/app && sudo systemctl restart app_server.service"
-printf "\e[32m completing the restarting!! \e[m"
-echo -e "\n"
+if [ $? = 0 ]; then
+  printf "\e[32mcompleting the restarting!! \e[m\n"
+else
+  printf "\e[31mrestart failed!! \e[m\n"
+fi
