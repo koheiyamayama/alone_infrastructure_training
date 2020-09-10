@@ -13,8 +13,8 @@ fi
 echo -e "\n"
 
 echo "restarting application server..."
-ssh api1 "cd ~/app && sudo systemctl restart app_server.service" &&
-ssh api2 "cd ~/app && sudo systemctl restart app_server.service"
+ssh api1 "sudo systemctl daemon-reload && sudo systemctl restart app_server.service" &&
+ssh api2 "sudo systemctl daemon-reload && sudo systemctl restart app_server.service"
 if [ $? = 0 ]; then
   printf "\e[32mcompleting the restarting!! \e[m\n"
 else

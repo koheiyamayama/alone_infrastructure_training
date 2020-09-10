@@ -25,13 +25,11 @@
 # end
 
 # p client
-
-puts 'Hello World!'
 count = 0
 while true
-  File.open('./logs/logs.txt', 'a+') do |f|
+  File.open('./logs/logs.txt', 'w+') do |f|
     sleep 1
-    count += 1
+    count += 2
     f.write(count, "\n")
   end
 end
