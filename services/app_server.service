@@ -1,0 +1,8 @@
+[Unit]
+Description=start application server
+
+[Service]
+Type=simple
+ExecStart=ruby ~/app/main.rb
+ExecReload=/usr/bin/pkill -SIGTERM -f -u pi ruby ~/app/main.rb
+KillMode=process
