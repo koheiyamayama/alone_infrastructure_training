@@ -1,6 +1,6 @@
 echo "updating nginx configuration..."
-scp ./lb/conf/nginx.conf pi@192.168.11.7:/etc/nginx/nginx.conf &&
-scp ./lb/conf/main.conf pi@192.168.11.7:/etc/nginx/conf.d/main.conf
+scp ./lb/conf/production/nginx.conf pi@192.168.11.7:/etc/nginx/nginx.conf &&
+scp ./lb/conf/production/main.conf pi@192.168.11.7:/etc/nginx/conf.d/main.conf
 if [ $? = 0 ]; then
   printf "\e[32m completing the updating!! \e[m"
 else
