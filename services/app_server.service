@@ -2,10 +2,12 @@
 Description=start application server
 
 [Service]
+User=pi
 Environment=PATH=/home/pi/.rbenv/shims:/home/pi/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
 EnvironmentFile=/home/pi/env/production_app_server.env
 WorkingDirectory=/home/pi
 Type=simple
+ExecStartPre=/home/pi/.rbenv/shims/bundle install --with production --jobs 2 --gemfile /home/pi/app/Gemfile
 ExecStart=/home/pi/.rbenv/shims/ruby /home/pi/app/main.rb
 ExecReload=/usr/bin/pkill -SIGTERM -f -u pi ruby /home/pi/app/main.rb
 KillMode=process
