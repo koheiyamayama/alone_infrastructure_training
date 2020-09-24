@@ -1,0 +1,15 @@
+{
+  "name": "snabi-modoki",
+  "version": "1.0.0",
+  "description": "frontend application for snabi-modoki",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "kohei.yamaguchi",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6"
+  }
+}
