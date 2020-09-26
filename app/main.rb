@@ -29,5 +29,5 @@ until success_connect_to_mysql
 end
 
 get '/' do
-  "Hello World!"
+  erb :index
 end

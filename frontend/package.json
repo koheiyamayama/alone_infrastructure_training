@@ -4,6 +4,7 @@
   "description": "frontend application for snabi-modoki",
   "main": "index.js",
   "scripts": {
+    "build": "npx webpack --env production --output-public-path assets/",
     "test": "npx jest /app/test/",
     "lint": "npx prettier --write /app/src /app/types",
     "storybook": "start-storybook -p 6006",
