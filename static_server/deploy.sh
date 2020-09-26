@@ -1,7 +1,7 @@
 set -e
 ssh static_server "sudo mkdir -p -m 777 /assets"
 scp -r $PWD/frontend/dist/* static_server:/assets/
-scp -r $PWD/static_server/conf/nginx.conf static_server:/etc/nginx/nginx.conf
+scp -r $PWD/static_server/conf.d/nginx.conf static_server:/etc/nginx/nginx.conf
 if [ $? = 0 ]; then
   echo "success for distributing files"
 else
