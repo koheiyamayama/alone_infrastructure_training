@@ -30,3 +30,9 @@ services:
       dockerfile: ./docker/lb/Dockerfile
     ports:
       - 80:80
+  static_server:
+    build:
+      context: ../
+      dockerfile: ./docker/static_server/Dockerfile
+    ports:
+      - 80:80
