@@ -6,6 +6,7 @@ module.exports = {
   entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "./dist"),
+    publicPath: "assets",
     filename: "build.js",
   },
   module: {
@@ -32,9 +33,13 @@ module.exports = {
     extensions: [".ts", ".js", ".tsx"],
   },
   devServer: {
-    watchOptions: {
-      poll: true
-    }
+    contentBase: "/",
+    publicPath: "/assets",
+    port: 3500,
+    compress: true,
+    hot: true,
+    host: "0.0.0.0",
+    allowedHosts: ["localhost"],
   },
   plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
 };
