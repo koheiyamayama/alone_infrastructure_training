@@ -39,14 +39,11 @@ services:
     ports:
       - 8080:80
     volumes:
-      - assets:/assets
+      - ../frontend/dist:/assets
   frontend:
     build:
       context: ../
       dockerfile: ./docker/frontend/Dockerfile
     volumes:
-      - ../frontend:/app
-      - assets:/app/dist
+      - ../frontend/:/app/
     command: ["bash", "-c", "npx webpack-dev-server"]
-volumes:
-  assets:

@@ -31,5 +31,10 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".js", ".tsx"],
   },
+  devServer: {
+    watchOptions: {
+      poll: true
+    }
+  },
   plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
 };
