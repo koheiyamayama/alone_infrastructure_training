@@ -21,7 +21,6 @@ services:
       - ./app.env
     command: ruby main.rb
     depends_on:
-      - lb
       - redis
       - mariadb
   lb:
@@ -30,9 +29,24 @@ services:
       dockerfile: ./docker/lb/Dockerfile
     ports:
       - 80:80
+    depends_on:
+      - app
+      - static_server
   static_server:
     build:
       context: ../
       dockerfile: ./docker/static_server/Dockerfile
     ports:
-      - 80:80
+      - 8080:80
+    volumes:
+      - assets:/assets
+  frontend:
+    build:
+      context: ../
+      dockerfile: ./docker/frontend/Dockerfile
+    volumes:
+      - ../frontend:/app
+      - assets:/app/dist
+    command: ["bash", "-c", "npx webpack-dev-server"]
+volumes:
+  assets:
