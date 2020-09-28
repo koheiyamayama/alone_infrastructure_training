@@ -8,7 +8,7 @@ import Chokominto from "./images/chokomintou_uzakichan.jpg"
 
 export const App: React.FC = () => {
   return <div>
-    hello world!
+    hello world!!
     <img src={Kannzenshouri} />
     <img src={Megane} />
     <img src={Ukkari} />

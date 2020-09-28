@@ -39,6 +39,7 @@ module.exports = {
     compress: true,
     hot: true,
     host: "0.0.0.0",
+    sockPort: 80,
     allowedHosts: ["localhost"],
   },
   plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
