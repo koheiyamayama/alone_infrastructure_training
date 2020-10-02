@@ -14,6 +14,7 @@ until success_connect_to_mysql
       password: ENV['DATABASE_PASSWORD'],
       port: ENV['DATABASE_PORT'],
       username: ENV['DATABASE_USERNAME'],
+      database: ENV['DATABASE_NAME'],
       reconnect: true
     )
   rescue Mysql2::Error::ConnectionError => exception
